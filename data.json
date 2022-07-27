@@ -1,0 +1,17 @@
+{
+  "name": "Daniel",
+  "email": "daniel@gmail.com",
+  "phone": "(99) 99999-9999",
+  "zip": "00000-000",
+  "city": "City",
+  "state": "PB",
+  "streetAddress": "Rua das Tulipas",
+  "number": "90",
+  "complement": "Perto da Rua Flores",
+  "neighborhood": "Ao redor da praça central",
+  "deviceCount": 2,
+  "devices": [
+    { "type": "notebook", "condition": "working" },
+    { "type": "desktop", "condition": "notWorking" }
+  ]
+}
