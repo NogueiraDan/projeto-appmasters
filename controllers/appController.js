@@ -38,7 +38,20 @@ const donation = (req, res) => {
     });
   }
 
-  /* PRECISA IMPLEMENTAR VERIFICAÇÃO DOS DEVICES */
+  // VERIFICAÇÃO DOS DEVICES
+
+  const result = data.devices.map((item) => {
+    return devicesTypes.includes(item.type);
+  });
+  //console.log("Resultado da avaliação de cada item: " + result);
+  if (!result.every((element) => element == true)) {
+    console.log("Devices incorretos");
+    res.status(400).json({
+      error: true,
+      message: "Devices incorretos: Verifique o nome dos devices",
+    });
+  }
+
   res.status(200).json({ sucess: "true" });
 };
 

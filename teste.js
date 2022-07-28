@@ -1,16 +1,25 @@
 let device = [
   { type: "notebook", condition: "working" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
-  { type: "desktop", condition: "notWorking" },
+  { type: "desktop", condition: "working" },
+  { type: "netbook", condition: "working" },
+  { type: "monitor", condition: "working" },
+  { type: "impressora", condition: "working" },
+  { type: "scanner", condition: "notWorking" },
 ];
 
-for (let prop in device) {
-  console.log(device[prop].type);
-}
+let devicesTypes = [
+  "notebook",
+  "desktop",
+  "netbook",
+  "monitor",
+  "impressora",
+  "scanner",
+];
+
+const result = device.map((item) => {
+  return devicesTypes.includes(item.type);
+});
+
+console.log("Resultado da avaliação de cada item: " + result);
+
+console.log("FINAL: " + result.every((element) => element == true));
