@@ -59,6 +59,23 @@ describe("Testando rotas da API", () => {
     expect(response.statusCode).toEqual(400);
   });
 
+  it("Deve faltar os devices", async () => {
+    const response = await request(app).post("/donation").send({
+      name: "Daniel",
+      email: "daniel@gmail.com",
+      phone: "(99) 99999-9999",
+      zip: "00000-000",
+      city: "City",
+      state: "PB",
+      streetAddress: "Rua das Tulipas",
+      number: "90",
+      complement: "Perto da Rua Flores",
+      neighborhood: "Ao redor da praça central",
+      deviceCount: 3,
+    });
+    expect(response.statusCode).toEqual(400);
+  });
+
   it("Deve enviar quantidade de devices diferente dos declarados", async () => {
     const response = await request(app)
       .post("/donation")
