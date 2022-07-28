@@ -14,7 +14,7 @@ const donation = (req, res) => {
     "scanner",
   ];
 
-  // Verificando se tem campo faltando no body
+  // Verificando se tem algum campo faltando no body
   if (Object.keys(data).length != 12) {
     res.status(400).json({
       error: true,
@@ -39,7 +39,6 @@ const donation = (req, res) => {
   }
 
   // VERIFICAÇÃO DOS DEVICES
-
   const result = data.devices.map((item) => {
     return devicesTypes.includes(item.type);
   });
